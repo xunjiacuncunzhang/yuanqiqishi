@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="floor" tilewidth="32" tileheight="32">
+  <image source="map/骑士地板.png" width="40" height="40"/>
+ </tileset>
+ <tileset firstgid="2" name="wall" tilewidth="32" tileheight="32">
+  <image source="map/墙.png" width="40" height="60"/>
+ </tileset>
+ <tileset firstgid="3" name="door" tilewidth="32" tileheight="32">
+  <image source="map/左右门（开）.png" width="40" height="40"/>
+ </tileset>
+ <tileset firstgid="4" name="operater" tilewidth="32" tileheight="32">
+  <image source="map/木箱.png" width="40" height="60"/>
+ </tileset>
+ <tileset firstgid="5" name="guard1" tilewidth="32" tileheight="32">
+  <image source="map/怪物.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="9" name="guard2" tilewidth="32" tileheight="32">
+  <image source="map/怪物反.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="13" name="fire" tilewidth="32" tileheight="32">
+  <image source="map/火炬障碍.png" width="40" height="80"/>
+ </tileset>
+ <layer name="块层 1" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYBzFo3gUj+JRPIpHMc0wAO4uAdw=
+  </data>
+ </layer>
+ <layer name="块层 2" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYmBgYMKDmYGYkQE7YITK49MPw7QEo3aM2jFqx6gdo3aM2kGJHbTGAC/yAJ8=
+  </data>
+ </layer>
+ <layer name="块层 3" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjALqACY8mFqABQcetWPUjsEMADtjAKs=
+  </data>
+ </layer>
+ <layer name="块层 4" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBg6gGnUjlE7Ru0YEXZgw6NgFAxlAACM7AAh
+  </data>
+ </layer>
+ <layer name="块层 5" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBhYwArEbATUcAIxFxAzkWkHOxBzEFDDDcQ8FNgxCkbBKBgFo2AU4AIA4xMASQ==
+  </data>
+ </layer>
+ <layer name="块层 6" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAMeEkUJwfwkSg+CkbBKBgFo2AUDBUAAIMzADc=
+  </data>
+ </layer>
+</map>

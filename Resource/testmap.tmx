@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="floor" tilewidth="32" tileheight="32">
+  <image source="map/骑士地板.png" width="40" height="40"/>
+ </tileset>
+ <tileset firstgid="2" name="wall" tilewidth="32" tileheight="32">
+  <image source="map/墙.png" width="40" height="60"/>
+ </tileset>
+ <tileset firstgid="3" name="door" tilewidth="32" tileheight="32">
+  <image source="map/左右门（开）.png" width="40" height="40"/>
+ </tileset>
+ <layer name="块层 1" width="20" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjcgHEUj+JRPIqhGAAW9gEF
+  </data>
+ </layer>
+ <layer name="块层 2" width="20" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjcgIkAJlU9Nj2Uum3UvFHzRs3DbR41MQDiOAB1
+  </data>
+ </layer>
+ <layer name="块层 3" width="20" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjagBkHexSMglEw/AAAHCwABw==
+  </data>
+ </layer>
+</map>
