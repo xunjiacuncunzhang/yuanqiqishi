@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="floor" tilewidth="32" tileheight="32">
+  <image source="map/骑士地板.png" width="40" height="40"/>
+ </tileset>
+ <tileset firstgid="2" name="wall" tilewidth="32" tileheight="32">
+  <image source="map/墙.png" width="40" height="60"/>
+ </tileset>
+ <tileset firstgid="3" name="door" tilewidth="32" tileheight="32">
+  <image source="map/左右门（开）.png" width="40" height="40"/>
+ </tileset>
+ <tileset firstgid="4" name="operator" tilewidth="32" tileheight="32">
+  <image source="map/木箱.png" width="40" height="60"/>
+ </tileset>
+ <tileset firstgid="5" name="button" tilewidth="32" tileheight="32">
+  <image source="map/骑士墙.png" width="40" height="40"/>
+ </tileset>
+ <tileset firstgid="6" name="area" tilewidth="32" tileheight="32">
+  <image source="map/冰墙.png" width="40" height="60"/>
+ </tileset>
+ <tileset firstgid="7" name="guard1" tilewidth="32" tileheight="32">
+  <image source="map/怪物.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="11" name="guard2" tilewidth="32" tileheight="32">
+  <image source="map/怪物反.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="15" name="fire" tilewidth="32" tileheight="32">
+  <image source="map/火炬障碍.png" width="40" height="80"/>
+ </tileset>
+ <layer name="块层 1" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYBzFo3gUj+JRPIpHMc0wAO4uAdw=
+  </data>
+ </layer>
+ <layer name="块层 2" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYmBgYCISYwOU6KUWINYNQ8Ufo3aM2jFqx6gdo3YMLzsAD0kAlQ==
+  </data>
+ </layer>
+ <layer name="块层 3" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAeMBPgDxUwXPwxCkbBKBgFo2BoAABZXAAN
+  </data>
+ </layer>
+ <layer name="块层 4" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFAwWYRu0YtWPUjgG3AxnjEkeXpwZgwYJH7Ri+dgAAACsAlQ==
+  </data>
+ </layer>
+ <layer name="块层 5" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBhZgIkOdrADMQeaGDcQ81DRDk4g5kIT4wViPiraMQpGwSgYBaOAOgAA/cMAVw==
+  </data>
+ </layer>
+ <layer name="块层 6" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBg+gJ+APDMQM0IxuUAAjxw7EHNQwQ58gBOIuWhsxygYBaNgFIwC6gIAzysASw==
+  </data>
+ </layer>
+ <layer name="块层 7" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJztlDsOwCAMQ03aHe5/WjpUKrLSfPrZ8iRvMU4QoQFoCa1kPP2QOOp0fsQjS/1w+tjOGpCHZxFjbr4DjYhHAjVv4Yw/qIzKWOEd1oj0Z2UM+H9BJkPb8/1GghxWjxpPMrJUxoX3Tr7MmAvmAUA=
+  </data>
+ </layer>
+</map>

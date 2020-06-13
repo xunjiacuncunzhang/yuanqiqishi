@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="oper" tilewidth="32" tileheight="32">
+  <image source="map/木箱.png" width="40" height="60"/>
+ </tileset>
+ <tileset firstgid="2" name="wall" tilewidth="32" tileheight="32">
+  <image source="map/墙.png" width="40" height="60"/>
+ </tileset>
+ <tileset firstgid="3" name="door" tilewidth="32" tileheight="32">
+  <image source="map/左右门（开）.png" width="40" height="40"/>
+ </tileset>
+ <tileset firstgid="4" name="fire" tilewidth="32" tileheight="32">
+  <image source="map/火炬障碍.png" width="40" height="80"/>
+ </tileset>
+ <tileset firstgid="6" name="floor2" tilewidth="32" tileheight="32">
+  <image source="map/骑士地板.png" width="40" height="40"/>
+ </tileset>
+ <tileset firstgid="7" name="guard" tilewidth="32" tileheight="32">
+  <image source="map/怪物.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="11" name="guard2" tilewidth="32" tileheight="32">
+  <image source="map/怪物反.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="15" name="door" tilewidth="32" tileheight="32">
+  <image source="map/左右门（开）.png" width="40" height="40"/>
+ </tileset>
+ <tileset firstgid="16" name="char1" tilewidth="32" tileheight="32">
+  <image source="map/墙1.png" width="40" height="60"/>
+ </tileset>
+ <layer name="floor" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjY2BgYBvFo3gUj+JRPIpHMc0wAHBDCyM=
+  </data>
+ </layer>
+ <layer name="oper" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIKhAxhx4FE7Ru0YzAAARLwAJQ==
+  </data>
+ </layer>
+ <layer name="wall" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYmBgYCISYwOU6CUHYDNr1I5RO0btGBx2UKsMIMcf5NhBqlupEY6jdgxOO2iNAfACANk=
+  </data>
+ </layer>
+ <layer name="fire" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAMWCiUJwawUig/CkbBKBgFo2AUDFYAAIV0ABM=
+  </data>
+ </layer>
+ <layer name="guard" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBg8gB2IOWhsBycQc9HYjlEwCkbBKBgFowAZAADpeAAj
+  </data>
+ </layer>
+ <layer name="guard2" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjcgBuIeWhsBy8Q89HYjlEwCkbBKBgFIxcAAFBfADM=
+  </data>
+ </layer>
+ <layer name="door" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAO8JMoTi3ADcQ8NLaDF4j5aGzHKBgFo2AUjIKRCwAo/gBR
+  </data>
+ </layer>
+</map>
