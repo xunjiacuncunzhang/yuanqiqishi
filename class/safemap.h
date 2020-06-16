@@ -17,6 +17,7 @@ public:
     void set(Ref* pSneder);
     void pause(Ref* pSender);
     void book(Ref* pSender);
+    void bag(Ref* pSender);
     CREATE_FUNC(safemap);
 private:
     JoyStick* rocker;

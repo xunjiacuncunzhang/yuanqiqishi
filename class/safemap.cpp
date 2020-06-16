@@ -5,6 +5,8 @@
 #include"GamePause.h"
 #include"enemy.h"
 #include"SimpleAudioEngine.h"
+#include"backpack.h"
+using namespace std;
 USING_NS_CC;
 Scene* safemap::createScene()
 {
@@ -80,7 +82,7 @@ bool safemap::init()
     auto role =Sprite::create("knight.png", rect);
    // role->setScale(0.8);// 被控制的精灵
     role->setPosition(Vec2(300.0f, 200.0f));
-    this->addChild(role, 0, "role");
+    this->addChild(role,1 , "role");
     //Rect rect = Rect(0.0f, 0.0f, 130.0, 130.0);
    // auto role = Sprite::create("test_sprite.png", rect);
    // role->setPosition(Vec2(300.0, 200.0));
@@ -89,10 +91,20 @@ bool safemap::init()
     send->setScale(0.6);
     send->setPosition(432, 552);
     this->addChild(send, 0, "send");
-    
+    auto* pbag = MenuItemImage::create("backpack.jpg", "backpack.jpg", this, menu_selector(safemap::bag));
+    auto* bag = Menu::create(pbag, NULL, NULL);
+    bag->setScale(0.2);
+    bag->setAnchorPoint(Vec2::ZERO);
+    bag->setPosition(visibleSize.width/9, visibleSize.height*7/8);
+    addChild(bag, 1, "bag");
     return true;
 }
-
+void safemap::bag(Ref* pSender)
+{
+    backpack bag;
+    bag.add(1,1);
+    Director::sharedDirector()->pushScene(bag.createScene());
+}
 /*让我们的精灵按照摇杆的力度移动距离*/
 void safemap::update(float dt)
 {

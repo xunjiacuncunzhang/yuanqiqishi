@@ -15,26 +15,26 @@ bool enemy::init()
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto* gold = Sprite::create("goldcoin.jpg");
-	gold->setAnchorPoint(Vec2::ZERO);
-	gold->setPosition(608, 416);
-	gold->setScale(0.3);
-	addChild(gold, 1);
-	auto* goldcoinlabel = LabelTTF::create("0", "Arial", 30);
-	goldcoinlabel->retain();
-	goldcoinlabel->setPosition(672, 416);
-	this->addChild(goldcoinlabel, 1,"goldcoinlabel");
+	//auto* gold = Sprite::create("goldcoin.jpg");
+	//gold->setAnchorPoint(Vec2::ZERO);
+	//gold->setPosition(608, 416);
+	//gold->setScale(0.3);
+	//addChild(gold, 1);
+	//auto* goldcoinlabel = LabelTTF::create("0", "Arial", 30);
+	//goldcoinlabel->retain();
+	//goldcoinlabel->setPosition(672, 416);
+	//this->addChild(goldcoinlabel, 1,"goldcoinlabel");
 	
-	goldcoinlabel->setString(StringUtils::format("%d",gold));
-	goldcoinlabel->setVisible(true);
+	//goldcoinlabel->setString(StringUtils::format("%d",gold));
+	//goldcoinlabel->setVisible(true);
 
 
-	auto* pButton1 = MenuItemImage::create("unlock.jpg", "unlock.jpg", this, menu_selector(enemy::unlock));
+	auto* pButton1 = MenuItemImage::create("unlock.jpg", "unlockclick.jpg", this, menu_selector(enemy::unlock));
 	auto* button1 = Menu::create(pButton1, NULL, NULL);
 	button1->setAnchorPoint(Vec2(0, 0));
 	button1->setPosition(352,48 );
 	button1->setScale(0.5f);
-	addChild(button1);
+	addChild(button1,1,"unlock");
 
 	auto* attribute = Sprite::create("attribute.png");
 	attribute->setAnchorPoint(Vec2::ZERO);
@@ -207,11 +207,8 @@ void enemy::hero(Ref* pSender)
 }
 void enemy::unlock(Ref* pSender)
 {
-	gold -= 1000;
-	if (gold < 0)
-	{
-		gold += 1000;
-	}
+	Node* node = getChildByName("unlock");
+	this->removeChildByName("unlock");
 }
 void enemy::back(Ref* pSender)
 {
