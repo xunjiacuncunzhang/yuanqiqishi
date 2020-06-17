@@ -1,6 +1,6 @@
-/*
 #include "Bullet.h"
 #include"Player.h"
+#include"weapon.h"
 USING_NS_CC;
 
 Bullet::Bullet() {
@@ -20,24 +20,26 @@ void Bullet::init(Point pointPlayer) {
 
     //×Óµ¯ÌùÍ¼
     m_bulletSprite = CCSpriteBatchNode::create("bullet1.png");
-    m_bulletSprite->setPosition(ccp(pointPlayer.x + 20, pointPlayer.y - 10));
+    //m_bulletSprite->setPosition(ccp(pointPlayer.x + 20, pointPlayer.y - 10));
     addChild(m_bulletSprite);
 
 }
 
 //Ôö¼ÓÒ»¸öĞÂ×Óµ¯
-void Bullet::addNewBullet() {
+void Bullet::addNewBullet(weapon *weapon,Exp* exp) {//Èç¹û²»ĞĞ¾Í»»³É×ø±ê
     //¹¹½¨Ò»¸ö×Óµ¯£¬Ìí¼Óµ½BatchNodeÖĞ¡£
     CCSprite* newBullet = CCSprite::createWithTexture(m_bulletSprite->getTexture());
-    newBullet->setPosition(CCPointZero);
+    Point pointWeapon = weapon->getPosition();
+    newBullet->setPosition(ccp(pointWeapon.x + 10, pointWeapon.y));
     m_bulletSprite->addChild(newBullet);
 
     //Ìí¼Ó×Óµ¯µ½ÒÑ´æÔÚ×Óµ¯Êı×é
     m_allBulletArray->addObject(newBullet);
+    exp.currentExp = currentExp - 0.5;
+    exp->setCurrentProgress(exp->getCurrentProgress() - 0.5);//²ÎÊıºóÃæÔÙµ÷
 }
 
 //ÒÆ¶¯×Óµ¯ 
-/*
 void Bullet::moveBullet(Player* player, Monster *monster) {//ÕâÀïÓÃµ½ĞíÍ¬Ñ§µÄ¹ÖÎïÀà
     //±éÀú¸üĞÂÃ¿¸ö×Óµ¯µÄÎ»ÖÃ
     for (int i = 0; i < m_allBulletArray->count(); ++i) {
@@ -60,11 +62,15 @@ void Bullet::moveBullet(Player* player, Monster *monster) {//ÕâÀïÓÃµ½ĞíÍ¬Ñ§µÄ¹ÖÎ
             log("monster attacked");
             //ÔÚÕâÀïÊ¹¹ÖÎïµôÑª
         }
-        else
+        Point pointBullet = bullet->getPosition;
+        if(pointBullet.x>500||pointBullet.y>500){//·É³ö»­Ãæ ¸ù¾İ»­Ãæ´óĞ¡ÔÙ¸Ä
+            m_allBulletArray->removeObjectAtIndex(i);
+            m_bulletSprite->removeChild(bullet, true);
             log("no");
+        }
+           
         if (monster->getCurrentBlood() == 0) {
             monster->died();//Èç¹û¹ÖÎïËÀÍö
         }
     }
 }
-*/
