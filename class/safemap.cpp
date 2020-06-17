@@ -5,6 +5,8 @@
 #include"GamePause.h"
 #include"enemy.h"
 #include"SimpleAudioEngine.h"
+#include"backpack.h"
+using namespace std;
 USING_NS_CC;
 Scene* safemap::createScene()
 {
@@ -69,18 +71,18 @@ bool safemap::init()
     button4->setScale(0.7f);
     addChild(button4, 1);
 
-    Sprite* spRocker2 = Sprite::create("joystick.png");//Ò¡¸Ë
+    Sprite* spRocker2 = Sprite::create("joystick.png");//æ‘‡æ†
     spRocker2->setScale(0.5);
-    Sprite* spRockerBG2 = Sprite::create("joystickBG.png");//Ò¡¸Ë±³¾°
+    Sprite* spRockerBG2 = Sprite::create("joystickBG.png");//æ‘‡æ†èƒŒæ™¯
     spRockerBG2->setScale(0.7);
-    HRocker* rocker2 = HRocker::HRockerWithCenter(Vec2(128.0f,128.0f), 50.0f, spRocker2, spRockerBG2, false);//´´½¨Ò¡¸Ë
-    this->addChild(rocker2, 0, "joystick");//Ò¡¸ËÌí¼Óµ½layerÖÐ 
+    HRocker* rocker2 = HRocker::HRockerWithCenter(Vec2(128.0f,128.0f), 50.0f, spRocker2, spRockerBG2, false);//åˆ›å»ºæ‘‡æ†
+    this->addChild(rocker2, 0, "joystick");//æ‘‡æ†æ·»åŠ åˆ°layerä¸­ 
     this->scheduleUpdate();
     Rect rect = Rect(0.5f, 0.0f, 60.0f, 65.0f);
     auto role =Sprite::create("knight.png", rect);
-   // role->setScale(0.8);// ±»¿ØÖÆµÄ¾«Áé
+   // role->setScale(0.8);// è¢«æŽ§åˆ¶çš„ç²¾çµ
     role->setPosition(Vec2(300.0f, 200.0f));
-    this->addChild(role, 0, "role");
+    this->addChild(role,1 , "role");
     //Rect rect = Rect(0.0f, 0.0f, 130.0, 130.0);
    // auto role = Sprite::create("test_sprite.png", rect);
    // role->setPosition(Vec2(300.0, 200.0));
@@ -89,18 +91,28 @@ bool safemap::init()
     send->setScale(0.6);
     send->setPosition(432, 552);
     this->addChild(send, 0, "send");
-    
+    auto* pbag = MenuItemImage::create("backpack.jpg", "backpack.jpg", this, menu_selector(safemap::bag));
+    auto* bag = Menu::create(pbag, NULL, NULL);
+    bag->setScale(0.2);
+    bag->setAnchorPoint(Vec2::ZERO);
+    bag->setPosition(visibleSize.width/9, visibleSize.height*7/8);
+    addChild(bag, 1, "bag");
     return true;
 }
-
-/*ÈÃÎÒÃÇµÄ¾«Áé°´ÕÕÒ¡¸ËµÄÁ¦¶ÈÒÆ¶¯¾àÀë*/
+void safemap::bag(Ref* pSender)
+{
+    //backpack bag;
+   // bag.add(1,1);
+    Director::sharedDirector()->pushScene(bag.createScene());
+}
+/*è®©æˆ‘ä»¬çš„ç²¾çµæŒ‰ç…§æ‘‡æ†çš„åŠ›åº¦ç§»åŠ¨è·ç¦»*/
 void safemap::update(float dt)
 {
     HRocker* rocker2 = (HRocker*)getChildByName("joystick");
-    Vec2 direct = rocker2->getDirection(); // »ñÈ¡Ò¡¸Ë·½ÏòÏòÁ¿
+    Vec2 direct = rocker2->getDirection(); // èŽ·å–æ‘‡æ†æ–¹å‘å‘é‡
     auto role = getChildByName("role");
-    float speed = 3.0f; // Ã¿Ò»Ö¡½ÇÉ«ÒÆ¶¯µÄËÙ¶È
-    Size WindowSize = Director::getInstance()->getWinSize(); // »ñÈ¡´°¿Ú´óÐ¡,·ÀÖ¹¾«ÁéÒÆ¶¯³öÈ¥
+    float speed = 3.0f; // æ¯ä¸€å¸§è§’è‰²ç§»åŠ¨çš„é€Ÿåº¦
+    Size WindowSize = Director::getInstance()->getWinSize(); // èŽ·å–çª—å£å¤§å°,é˜²æ­¢ç²¾çµç§»åŠ¨å‡ºåŽ»
     Vect newPosition = role->getPosition() + direct * speed;
     if (newPosition.x > 0 && newPosition.x < WindowSize.width && newPosition.y > 0 && newPosition.y < WindowSize.height)
     {
